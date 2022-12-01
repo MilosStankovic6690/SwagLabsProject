@@ -1,10 +1,5 @@
-﻿using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace SwagProject.Driver
 {
@@ -20,7 +15,7 @@ namespace SwagProject.Driver
             Instance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             Instance.Navigate().GoToUrl("https://www.saucedemo.com/");
         }
-         
+
         public static void CleanUp()
         {
             Instance?.Quit();

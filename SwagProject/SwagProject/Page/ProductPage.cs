@@ -1,11 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SwagProject.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SwagProject.Page
 {
@@ -20,7 +15,6 @@ namespace SwagProject.Page
         public IWebElement MenuClick => driver.FindElement(By.Id("react-burger-menu-btn"));
         public IWebElement AboutClick => driver.FindElement(By.Id("about_sidebar_link"));
         public IWebElement ShoppingCardClick => driver.FindElement(By.Id("shopping_cart_container"));
-       
 
         public void SelectOption(string text)
         {

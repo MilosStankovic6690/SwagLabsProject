@@ -1,4 +1,3 @@
-using OpenQA.Selenium;
 using SwagProject.Driver;
 using SwagProject.Page;
 
@@ -10,7 +9,6 @@ namespace SwagProject.Tests
         ProductPage productPage;
         CardPage cardPage;
 
-
         [SetUp]
         public void Setup()
         {
@@ -18,9 +16,6 @@ namespace SwagProject.Tests
             loginPage = new LoginPage();
             productPage = new ProductPage();
             cardPage = new CardPage();
-            
-
-
         }
 
         [TearDown]
@@ -28,8 +23,6 @@ namespace SwagProject.Tests
         {
             WebDrivers.CleanUp();
         }
-
-
 
         [Test]
 
@@ -52,8 +45,8 @@ namespace SwagProject.Tests
 
             Assert.That(productPage.SortByPrice.Displayed);
         }
-        [Test]
 
+        [Test]
         public void TC03_GoToAboutPage_ShouldRedactToNewPage()
         {
             loginPage.Login("standard_user", "secret_sauce");
@@ -62,8 +55,8 @@ namespace SwagProject.Tests
 
             Assert.That("https://saucelabs.com/", Is.EqualTo(WebDrivers.Instance.Url));
         }
-        [Test]
 
+        [Test]
         public void TC04_BuyProduct_ShouldBeFinishedShopping()
         {
             loginPage.Login("standard_user", "secret_sauce");
@@ -78,7 +71,6 @@ namespace SwagProject.Tests
             cardPage.ButtonFinish.Click();
 
             Assert.That("THANK YOU FOR YOUR ORDER", Is.EqualTo(cardPage.OrderFinished.Text));
-            
         }
     }
 }
